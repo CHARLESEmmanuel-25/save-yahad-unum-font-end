@@ -1,0 +1,53 @@
+
+.nav-link-ukraine:hover
+{
+    color : #ffc107;
+}
+
+.nav-text-simple
+{
+    color: white;
+}
+
+#nav-text
+{
+    background-color: white;
+   border: none;
+
+}
+.navbar-black {
+    background-color: black;
+}
+
+.nav-decoration
+{
+    box-shadow: 0 0 10px -4px navajowhite;
+    left: 0;
+    top: 0;
+}
+
+.slide-first
+{
+    padding-top: 6rem;
+    padding-bottom: 0;
+
+}
+
+.slide-pres
+{
+    padding: 6rem 0;
+
+}
+
+.image-partners
+{
+    width: 100%;
+    object-fit: contain;
+}
+
+.yiu-our-supporters-logos {
+    /* height: 100px; */
+    width: 100%;
+    object-fit: contain;
+    transition: transform .2s;
+}

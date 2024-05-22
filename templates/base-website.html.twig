@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
+    <script src="https://kit.fontawesome.com/40f7efea4d.js" crossorigin="anonymous"></script>
+    <title></title>
+
+    {% block stylesheets %}
+
+    {% endblock %}
+</head>
+
+<body class="d-flex flex-column min-vh-100 w-100 bg-dark">
+
+    {% include 'website-common/navbar.html.twig' %}
+
+    <div class="container-fluid bg-dark mt-5">
+        {% block body %}{% endblock %}
+    </div>
+
+    {% include 'website-common/footer.html.twig' %}
+
+    <script type="application/javascript" src="{{ asset('assets/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script type="application/javascript" src="{{ asset('assets/js/form-newsletter.js') }}"></script>
+
+    <script>
+
+        const menu = document.querySelector('.navbar-collapse');
+        const choicesMenu = document.querySelectorAll('.nav-link-ukraine');
+
+        choicesMenu.forEach(choiceClick = (choice) => {
+            choice.addEventListener('click', clickChoice = () => {
+                // Rajouter du délais
+
+                setTimeout(timeOut = () => {
+                    menu.classList.remove('show');
+                },600)
+
+
+            });
+        });
+    </script>
+
+{% block javascripts %}
+{% endblock %}
+
+</body>
+</html>

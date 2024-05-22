@@ -1,0 +1,186 @@
+{% extends 'base-website.html.twig' %}
+
+{% block title %}Homepage!{% endblock %}
+
+{% block body %}
+    <div id="presentation" class="row mx-2 slide-first d-flex justify-content-center align-content-center">
+        <div class="col-lg-12 d-flex justify-content-center align-items-center mb-5">
+            <h1 class="nav-text-simple text-center mb-4">THE RUSSIAN WAR CRIMES PROJECT: GATHERING EVIDENCE</h1>
+        </div>
+        <div class=" col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 nav-text-simple d-flex justify-content-center align-content-center flex-column">
+            <p class="lh-1">This is a long paragraph written to show how the line-height of an element is affected by
+                our utilities. Classes are applied to the element itself or sometimes the parent element. These classes
+                can be customized as needed with our utility API.</p>
+            <p class="lh-sm">This is a long paragraph written to show how the line-height of an element is affected by
+                our utilities. Classes are applied to the element itself or sometimes the parent element. These classes
+                can be customized as needed with our utility API.</p>
+            <p class="lh-base">This is a long paragraph written to show how the line-height of an element is affected by
+                our utilities. Classes are applied to the element itself or sometimes the parent element. These classes
+                can be customized as needed with our utility API.</p>
+            <p class="lh-lg">This is a long paragraph written to show how the line-height of an element is affected by
+                our utilities. Classes are applied to the element itself or sometimes the parent element. These classes
+                can be customized as needed with our utility API.</p>
+        </div>
+        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 nav-text-simple d-flex justify-content-center"><img
+                    class="ms-lg-3 ms-md-2 ms-sm-0 ms-0 img-fluid d-flex align-items-center"
+                    width="700"
+                    src="{{ asset('assets/img/exemple.jpg') }}"
+                    alt=" Image"></div>
+
+    </div>
+
+    {# WITNESS     #}
+
+    <div id="witness" class="row mx-2 slide-first d-flex justify-content-center align-items-center">
+        <div class="col-lg-12 mb-5 ">
+            <h1 class="nav-text-simple text-center mb-4">WITNESS</h1>
+        </div>
+        <div class="col-xl-6 col-lg-12  col-md-12 col-sm-12 col-12 nav-text-simple  d-flex justify-content-center align-items-center flex-column">
+            <p class="lh-1">This is a long paragraph written to show how the line-height of an element is
+                affected by
+                our utilities. Classes are applied to the element itself or sometimes the parent element.
+                These classes
+                can be customized as needed with our utility API.</p>
+            <p class="lh-sm">This is a long paragraph written to show how the line-height of an element is
+                affected by
+                our utilities. Classes are applied to the element itself or sometimes the parent element.
+                These classes
+                can be customized as needed with our utility API.</p>
+            <p class="lh-base">This is a long paragraph written to show how the line-height of an element is
+                affected by
+                our utilities. Classes are applied to the element itself or sometimes the parent element.
+                These classes
+                can be customized as needed with our utility API.</p>
+            <p class="lh-lg">This is a long paragraph written to show how the line-height of an element is
+                affected by
+                our utilities. Classes are applied to the element itself or sometimes the parent element.
+                These classes
+                can be customized as needed with our utility API.</p>
+
+
+        </div>
+
+        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 nav-text-simple d-flex align-items-center justify-content-center">
+            <div class="ratio ratio-16x9">
+                <iframe width="700" height="341" src="https://www.youtube.com/embed/gWDCYwhirOs"
+                        title="Éveillez votre esprit supérieur • Nettoyez l'aura des énergies négatives" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+
+
+        <div class="col-12 text-center mt-5 ">
+            <p class="nav-text-simple text-center fs-5">SHARE YOUR STORY!</p>
+            <button type="button" class="btn btn-warning btn-lg">SIGN UP FOR AN INTERVIEW</button>
+
+        </div>
+    </div>
+
+    </div>
+
+
+    {# The team  #}
+
+
+    <div id="Team" class="row mx-2 slide-first d-flex justify-content-center align-content-center">
+        <div class="col-lg-12 mb-5 mt-lg-5 mt-md-3 mt-sm-2">
+            <h1 class="nav-text-simple text-center mb-4">The team</h1>
+        </div>
+        <div class="text-center col-lg-12 row row-cols-lg-3 row-cols-md-2 row-cols-3 d-flex justify-content-lg-evenly justify-content-md-between justify-content-sm-center justify-content-center">
+
+
+            {% for member in members %}
+
+                <div class="col card mb-2 mt-2 d-flex" style="width: 19rem;">
+                    
+                    <img class="card-img img-fluid mt-3"
+                         src="{{ asset('assets/img/' ~ member.image) }}" alt="{{ member.image }} Image">
+                    <div class="card-body ">
+                        <h6 class=" text-center mb-2">{{ member.translate('en').title }}  {{ member.name }}</h6>
+                        <p class="card-text ">
+                            {{ member.translate('en').description }}
+                        </p>
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+
+
+
+
+            <div class="col card mb-2 mt-2" style="width: 19rem;">
+
+
+                <img class="card-img img-fluid mt-3"
+                     src="{{ asset('assets/img/2.PNG') }}" alt=" Image">
+                <div class="card-body ">
+                    <h6 class=" text-center mb-2">Father Patrick Desbois</h6>
+                    <p class="card-text ">Some quick example text to build on the card title and make up the bulk of
+                        the
+                        card's content.</p>
+                </div>
+
+            </div>
+            <div class="col card mb-2 mt-2" style="width: 19rem;">
+
+
+                <img class="card-img img-fluid mt-3"
+                     src="{{ asset('assets/img/3.PNG') }}" alt=" Image">
+                <div class="card-body ">
+                    <h6 class=" text-center mb-2">Father Patrick Desbois</h6>
+                    <p class="card-text ">Some quick example text to build on the card title and make up the bulk of
+                        the
+                        card's content.</p>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+    {# Partners    #}
+
+    <div id="Partners" class="container text-center mt-5 mb-4 align-content-center slide-pres">
+        <div class="col-lg-12 mb-5">
+            <h1 class="nav-text-simple text-center mb-4">PARTNERS</h1>
+        </div>
+
+
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 mx-auto mt-3">
+
+
+            {% for partner in partners %}
+
+                <div class="col d-flex align-items-center justify-content-center text-center mb-lg-5 mb-md-5 mb-sm-5 mb-5">
+
+                    <a href="{{ partner.url }}" target="_blank" class="yiu-our-supporters-logos-link">
+                        <img class="image-partners" alt="{{ partner.logo }} logo"
+                             src="{{ asset('assets/img/' ~ partner.logo) }}">
+                    </a>
+
+                </div>
+
+            {% endfor %}
+
+            <div class="col d-flex align-items-center justify-content-center text-center mb-lg-5 mb-md-5 mb-sm-5 mb-5">
+
+                <a href="https://www.auswaertiges-amt.de/" target="_blank" class="yiu-our-supporters-logos-link">
+                    <img class="image-partners" alt="MAE Allemagne.jpg logo"
+                         src="{{ asset('assets/img/MAE Allemagne.jpg') }}">
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+{% endblock %}

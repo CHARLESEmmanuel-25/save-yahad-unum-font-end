@@ -1,0 +1,75 @@
+{% apply inline_css %}
+
+    <style>
+
+        .header {
+            text-align: center;
+        }
+
+        /*.logo-yahad {*/
+        /*    width: 320px;*/
+        /*}*/
+
+        .p-copyright {
+            font-style: italic;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+    </style>
+
+    <div class="header">
+        <img width="320" src="{{ email.image('@imagesNewsletter/logo-dev.png') }}" alt="Logo Yahad-In Unum" >
+        <h2>Welcome {{ firstname }} {{ name }} ! / Bienvenue {{ firstname }} {{ name }} !</h2>
+    </div>
+
+    <p>
+        Dear Sir or Madam {{ name }},
+    </p>
+
+    <p>
+        We confirm that you have subscribed to our newsletter!
+        Thank you for your support and interest in Yahad-In Unum's activities.
+    </p>
+
+    <p>
+        Please consider making a donation to Yahad-In Unum so that we may continue this work in the future.
+    </p>
+
+    <p>
+        Best regards,
+    </p>
+    <span>
+        Yahad-In Unum
+    </span>
+
+    <br><br>
+    <hr>
+
+    <p>
+        Cher Monsieur ou Madame {{ name }},
+    </p>
+
+    <p>
+        Nous vous confirmons que vous êtes désormais inscrit à notre newsletter !
+        Nous tenons à vous remercier pour votre soutien et pour l'intérêt que vous portez aux activités de Yahad-In Unum.
+    </p>
+
+    <p>
+        Si vous vous le pouvez, envisager de faire un don à Yahad-In Unum afin que nous puissions poursuivre ce travail à l'avenir.
+    </p>
+
+    <p>
+        Bien cordialement,
+    </p>
+    <span>
+        Yahad-In Unum
+    </span>
+
+    <p class="p-copyright">
+        Automatic email sent by <a href="https://www.yiu.ngo/">Yahad-In Unum</a> / Mail automatique envoyé par <a href="https://www.yiu.ngo/">Yahad-In Unum</a>
+    </p>
+
+
+
+{% endapply %}

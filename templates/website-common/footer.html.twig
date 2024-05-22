@@ -1,0 +1,185 @@
+<footer class="mt-auto py-2 w-100 bg-black text-white">
+
+    <div class="container-fluid text-center">
+
+        <div class="row d-flex justify-content-center mt-3">
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                <h4>Contact</h4>
+                <div class="mb-0 mt-3">
+                    <a class="fs-5 text-decoration-none text-warning" href="mailto:contact@yiu.ngo">
+                        contact@yiu.ngo
+                    </a>
+                </div>
+                <div class="mb-0 fs-5">
+                    +33 (0) 1 42 88 04 39
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                <h4>Social medias</h4>
+                <div class="mb-0 mt-3">
+                    <a class="fs-2 text-decoration-none text-warning"
+                       href="https://www.facebook.com/yahadinunum" target="_blank">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a class="fs-2 text-decoration-none text-warning"
+                       href="https://twitter.com/yahadinunum" target="_blank">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a class="fs-2 text-decoration-none text-warning"
+                       href="https://yiu.ngo/%3Ci%20class=%22fab%20fa-instagram%22%3E%3C/i%3E" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a class="fs-2 text-decoration-none text-warning"
+                       href="https://www.youtube.com/user/yahadinunum" target="_blank">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                <h4>Join our Newsletter</h4>
+                <div class="mb-0 mt-3">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-8 mb-4">
+                            <input id="footerFormNewsletterEmail" type="email" class="form-control" placeholder="p.desbois@yiu.ngo"/>
+                        </div>
+                        <div class="col-8">
+                            <button id="footerBtnNewsletterSignIn" class="btn btn-lg btn-warning text-white text-uppercase w-100" data-bs-toggle="modal" data-bs-target="#newsletterModal" onclick="openModalNewsletter()">
+                                SIGN ME UP <i class="fa-solid fa-envelope"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 mt-4 mb-2">
+                {% if date('Y')|date('Y') == "2023" %}
+
+                    <div>
+                        <h5>© Copyright {{ date('Y')|date('Y') }} Yahad-In Unum, All rights reserved </h5>
+                    </div>
+
+                {% else %}
+
+                    <div>
+                        <h5>© Copyright 2023-{{ date('Y')|date('Y') }} Yahad-In Unum, All rights reserved </h5>
+                    </div>
+
+                {% endif %}
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+{# Modal Newsletter Form #}
+<form id="formNewsletter">
+    <div class="modal fade" id="newsletterModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-dark" style="border: initial">
+                <div class="modal-header text-white bg-black">
+                    <h3 class="modal-title">Sign up to our newsletter</h3>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body mt-5 mb-5 text-white">
+                    <p class="text-center mt-0 fs-4">
+                        Receive our latest articles, extracts from our latest research and invitations to our conferences
+                    </p>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <label for="newsletterEmail" class="form-label text-white">Email address*</label>
+                            <input id="newsletterEmail" class="form-control yiu-form-control-newsletter"
+                                   name="newsletterEmail" type="email" placeholder="example@example.com" required>
+                            <div id="newsletterEmailError" class="alert alert-danger mt-2 mb-0 d-none">
+                                Erreur email
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <label for="newsletterLastname" class="form-label text-white">Lastname*</label>
+                            <input id="newsletterLastname" class="form-control yiu-form-control-newsletter"
+                                   name="newsletterLastname" type="text" placeholder="DESBOIS" required>
+                            <div id="newsletterLastnameError" class="alert alert-danger mt-2 mb-0 d-none">
+                                Erreur Lastname
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="newsletterFirstname" class="form-label text-white">Firstname*</label>
+                            <input id="newsletterFirstname" class="form-control yiu-form-control-newsletter"
+                                   name="newsletterFirstname" type="text" placeholder="Patrick" required>
+                            <div id="newsletterFirstnameError" class="alert alert-danger mt-2 mb-0 d-none">
+                                Erreur firstname
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bg-black">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="newsletterRGPD">
+                        <label class="form-check-label text-white" for="newsletterRGPD">
+                            I agree that Yahad - In Unum may use the information provided in this form for the sole purpose of receiving the YIU newsletter.
+                        </label>
+                        <div id="newsletterRGPDError" class="invalid-feedback d-none">
+                            RGPD Erreur
+                        </div>
+                    </div>
+                    {#                    <button type="button" class="btn btn-lg btn-secondary" data-bs-dismiss="modal">Close</button>#}
+                    <button id="btnFormNewsletter" type="button" class="btn btn-lg btn-warning text-white">
+                        SIGN ME UP <i class="fas fa-envelope"></i>
+                    </button>
+
+                    <div class="d-none">
+
+                        {#                    TOOLS #}
+                        <div class="js-form-newsletter-path" data-form-newsletter-path="{{ path('newsletter_newsletterForm') }}"></div>
+                        <div class="js-form-newsletter-button-text" data-form-newsletter-button-text='SIGN ME UP <i class="fa-solid fa-envelope"></i>'></div>
+{#                                            SUCCESS#}
+                        <div class="js-form-newsletter-success-title" data-form-newsletter-success-title="Welcome"></div>
+                        <div class="js-form-newsletter-success-subtitle" data-form-newsletter-success-subtitle="You are now subscribed to our newsletter!"></div>
+                        <div class="js-form-newsletter-success-text" data-form-newsletter-success-text="You will soon receive a confirmation email as well as our articles, travel reports and much more content!"></div>
+{#                                            ERROR#}
+                        <div class="js-form-newsletter-error-title" data-form-newsletter-error-title="Error!"></div>
+                        <div class="js-form-newsletter-error-subtitle" data-form-newsletter-error-subtitle="Oops..."></div>
+                        <div class="js-form-newsletter-error-text" data-form-newsletter-error-text="Sorry, we have encountered a problem... Please try again later."></div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+{# Modal Newsletter Result #}
+<div class="modal fade" id="newsletterResultModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header text-white bg-black">
+                <h5 class="modal-title" id="newsletterResultModalTitle"></h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p id="newsletterResultModalSubtitle" class="text-center mt-0 fs-4 text-black">
+
+                </p>
+                <p id="newsletterResultModalText" class="text-black">
+
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="application/javascript">
+    const openModalNewsletter = () => {
+        let footerFormNewsletterEmail = document.querySelector("#footerFormNewsletterEmail").value
+        let newsletterEmail = document.querySelector("#newsletterEmail")
+        newsletterEmail.value = footerFormNewsletterEmail
+    }
+</script>
